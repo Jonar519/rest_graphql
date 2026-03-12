@@ -36,7 +36,7 @@ class RickAndMortyViewModel extends ChangeNotifier {
     }
   }
 
-  Future<void> selectCharacter(Character character) async {
+  Future<void> loadCharacterPosts(Character character) async {
     _selectedCharacter = character;
     _isLoadingPosts = true;
     _currentPosts = [];
@@ -56,7 +56,6 @@ class RickAndMortyViewModel extends ChangeNotifier {
   void clearSelection() {
     _selectedCharacter = null;
     _currentPosts = [];
-    _errorMessage = null;
     notifyListeners();
   }
 

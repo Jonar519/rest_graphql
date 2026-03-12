@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'viewmodels/rickandmorty_viewmodel.dart';
-import 'screens/home_screen.dart';
+import 'screens/characters_list_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => RickAndMortyViewModel()),
       ],
       child: MaterialApp(
-        title: 'Rick and Morty Posts',
+        title: 'Rick and Morty Explorer',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           useMaterial3: true,
@@ -26,8 +26,9 @@ class MyApp extends StatelessWidget {
             centerTitle: true,
             elevation: 0,
           ),
+          // Eliminamos cardTheme de aquí
         ),
-        home: const HomeScreen(),
+        home: const CharactersListScreen(),
       ),
     );
   }
